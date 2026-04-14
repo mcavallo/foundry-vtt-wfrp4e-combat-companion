@@ -1,0 +1,209 @@
+/* Advantage badge (combat tracker) */
+.wfrp4e-ccm-advantage-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 1px 4px 0;
+  border-radius: 3px;
+  background: var(--color-cool-5);
+  color: var(--color-light-5);
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-right: 4px;
+  cursor: inherit;
+  position: relative;
+  transition: all 0.2s ease;
+
+  &.editable:hover {
+    background: var(--color-cool-4);
+  }
+
+  &.has-advantage {
+    box-shadow:
+      0px 0px 6px var(--color-cool-3),
+      0 0 0 1px var(--color-cool-3);
+    color: color-mix(in srgb, var(--color-light-5) 10%, white);
+  }
+}
+
+/* Popover animations */
+@keyframes wccm-popover-in {
+  from {
+    opacity: 0;
+    transform: translate(calc(-100% + 8px), -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-100%, -50%);
+  }
+}
+
+@keyframes wccm-popover-out {
+  from {
+    opacity: 1;
+    transform: translate(-100%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(calc(-100% + 8px), -50%);
+  }
+}
+
+/* Advantage popover (combat tracker) */
+.wfrp4e-ccm-advantage-popover {
+  --_btn-bg-active: color-mix(in srgb, var(--color-cool-3) 80%, transparent);
+  --_btn-bg-hover: color-mix(in srgb, var(--color-cool-3) 60%, transparent);
+  --_btn-bg: var(--color-cool-4);
+  --_btn-border: var(--color-cool-3);
+  --_btn-font-size: 14px;
+  --_btn-radius: 3px;
+  --_btn-size: 26px;
+  --_btn-text-color: var(--color-text-light-highlight);
+  --_gap: 4px;
+  --_text-color: var(--color-text-light-highlight);
+  --_value-font-size: 16px;
+
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-100%, -50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  background: var(--color-cool-5);
+  border: 1px solid var(--color-cool-3);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  animation: wccm-popover-in 0.15s ease-out;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -12px -18px;
+    z-index: -1;
+  }
+
+  &.no-animation {
+    animation: none;
+  }
+
+  &.closing {
+    animation: wccm-popover-out 0.15s ease-in forwards;
+  }
+}
+
+/* Hide system advantage field when our widget is enabled */
+body.wfrp4e-ccm-advantage-enabled
+  .form-group:has(input[name='system.status.advantage.value']) {
+  display: none;
+}
+
+/* Actor sheet advantage group */
+.wfrp4e-ccm-advantage-group {
+  --_btn-bg: transparent;
+  --_btn-border: var(--color-faded);
+  --_btn-font-size: 14px;
+  --_btn-radius: 50%;
+  --_btn-size: 24px;
+  --_btn-text-color: var(--color-grey2);
+  --_gap: 12px;
+  --_text-color: black;
+
+  .form-fields {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+/* Advantage widget (web component) */
+wfrp4e-ccm-advantage-widget {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: var(--_gap);
+
+  .advantage-value {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    font-size: var(--_value-font-size);
+    font-weight: bold;
+    color: var(--_text-color);
+    white-space: nowrap;
+    padding: 0 8px;
+    margin-top: 3px;
+    line-height: 1;
+
+    .separator,
+    .max {
+      opacity: 0.4;
+    }
+  }
+
+  .advantage-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--_btn-size);
+    height: var(--_btn-size);
+    padding: 0;
+    border: 1px solid var(--_btn-border);
+    border-radius: var(--_btn-radius);
+    background: var(--_btn-bg);
+    color: var(--_btn-text-color);
+    font-size: var(--_btn-font-size);
+    cursor: inherit;
+    line-height: 1;
+    outline: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: var(--_btn-bg-hover);
+    }
+
+    &:active {
+      background: var(--_btn-bg-active);
+      transition: background 0.05s;
+    }
+
+    &.disabled {
+      opacity: 0.3;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}
+
+wfrp4e-ccm-advantage-widget[variant='sheet'] {
+  .advantage-value {
+    font-weight: normal;
+
+    .separator,
+    .max {
+      opacity: 0.7;
+    }
+  }
+
+  .advantage-btn {
+    box-shadow: 0 0 10px rgba(107, 58, 15, 0.5294117647) inset;
+
+    &:hover {
+      background: inherit;
+      text-shadow: 0 0 8px var(--color-shadow-primary);
+    }
+
+    &.disabled {
+      opacity: 1;
+      color: color-mix(in srgb, var(--_btn-text-color) 50%, transparent);
+      box-shadow: 0 0 10px rgba(107, 58, 15, 0.2) inset;
+    }
+  }
+}

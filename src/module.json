@@ -1,0 +1,37 @@
+{
+  "id": "__MODULE_ID__",
+  "name": "__MODULE_ID__",
+  "title": "__MODULE_TITLE__",
+  "description": "__MODULE_DESCRIPTION__",
+  "version": "__VERSION__",
+  "author": "__AUTHOR__",
+  "authors": [],
+  "compatibility": {
+    "minimum": "__MODULE_COMPATIBILITY_MINIMUM__",
+    "verified": "__MODULE_COMPATIBILITY_VERIFIED__"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "wfrp4e",
+        "type": "system"
+      }
+    ]
+  },
+  "license": "__LICENSE__",
+  "esmodules": [],
+  "scripts": [],
+  "styles": [],
+  "packs": [],
+  "media": [],
+  "url": "__REPO_URL__",
+  "manifest": "__REPO_URL__/releases/latest/download/module.json",
+  "download": "__REPO_URL__/releases/download/__RELEASE__/__MODULE_ID_____RELEASE__.zip",
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ]
+}

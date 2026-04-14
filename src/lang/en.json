@@ -1,0 +1,25 @@
+{
+  "wfrp4e-combat-companion": {
+    "title": "WFRP4e Combat Companion",
+    "settings": {
+      "enableAdvantage": {
+        "name": "Enable Advantage Widget",
+        "hint": "Show the advantage widget in the combat tracker and actor sheets."
+      },
+      "advantageCap": {
+        "name": "Advantage Cap",
+        "hint": "How the maximum advantage value is determined for each combatant.",
+        "choices": {
+          "system": "Use System Settings",
+          "halfIB": "Half IB (rounded up)"
+        }
+      }
+    },
+    "advantage": {
+      "label": "Advantage",
+      "increment": "Increase Advantage",
+      "decrement": "Decrease Advantage",
+      "clear": "Clear Advantage"
+    }
+  }
+}
