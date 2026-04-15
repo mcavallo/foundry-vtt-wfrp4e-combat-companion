@@ -18,7 +18,7 @@
   ],
   "importOrderSortSpecifiers": true,
   "sortPackageJson": false,
-  "ignorePatterns": [],
+  "ignorePatterns": ["CHANGELOG.md", "dist"],
   "overrides": [
     {
       "files": ["*.yml", "*.yaml", "*.hbs"],
