@@ -1,6 +1,11 @@
 name: Setup
 description: Install Bun, Just, and project dependencies
 
+inputs:
+  npm-token:
+    description: Token for authenticating against npm.pkg.github.com
+    required: true
+
 runs:
   using: composite
   steps:
@@ -14,4 +19,6 @@ runs:
 
     - name: Install deps
       shell: bash
+      env:
+        NPM_TOKEN: ${{ inputs.npm-token }}
       run: bun i --frozen-lockfile

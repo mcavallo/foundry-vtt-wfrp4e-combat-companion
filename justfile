@@ -1,34 +1,47 @@
+# List available recipes
+default:
+    @just --list --list-submodules
+
+# Remove dist/ contents (preserves dist/ for symlinks).
 cleanup:
-    bunx rimraf dist
+    bunx foundry-build clean
 
+# Full release build: minified, hashed filenames.
 build: cleanup
-    bun --bun run scripts/build.ts
+    bunx foundry-build build
 
-rebuild:
-    DEV=1 bun --bun run scripts/build.ts
+# One-shot dev build: unminified, stable filenames, sourcemaps.
+build-dev:
+    bunx foundry-build dev
 
-[no-exit-message]
+# Dev build + watch mode (incremental rebuilds on change).
 dev:
-    DEV=1 just build
-    bunx nodemon --on-change-only
+    bunx foundry-build dev --watch
 
-test:
-    bunx vitest run
+# Run unit tests.
+test *args:
+    bunx vitest run {{args}}
 
-typecheck:
-    bunx tsgo --noEmit
+# Type-check only (no emit).
+typecheck *args:
+    bunx tsgo --noEmit {{args}}
 
-lint:
-    bunx oxlint
+# Lint sources.
+lint *args:
+    bunx oxlint {{args}}
 
-format:
-    bunx oxfmt
+# Apply formatter in place.
+format *args:
+    bunx oxfmt {{args}}
 
-format-check:
-    bunx oxfmt --check
+# Verify formatting without writing.
+format-check *args:
+    bunx oxfmt --check {{args}}
 
+# Symlink dist/ into the local Foundry modules dir.
 foundry-link:
-    bun --bun run scripts/foundrySymlink link
+    bunx foundry-symlink link
 
+# Remove the Foundry modules symlink.
 foundry-unlink:
-    bun --bun run scripts/foundrySymlink unlink
+    bunx foundry-symlink unlink

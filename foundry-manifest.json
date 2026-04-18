@@ -1,0 +1,27 @@
+{
+  "$schema": "./node_modules/@mcavallo/foundry-manifest/dist/schema.json",
+  "type": "module",
+  "id": "wfrp4e-combat-companion",
+  "title": "WFRP4e Combat Companion",
+  "description": "A set of combat improvement tools for the WFRP4e system.",
+  "repo": "mcavallo/foundry-vtt-wfrp4e-combat-companion",
+  "authors": [
+    {
+      "name": "iKindred",
+      "discord": "iKindred#8997",
+      "url": "https://github.com/mcavallo/"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14.360"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "wfrp4e",
+        "type": "system"
+      }
+    ]
+  }
+}
