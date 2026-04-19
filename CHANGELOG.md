@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/mcavallo/foundry-vtt-wfrp4e-combat-companion/compare/v0.1.0...v0.1.1) (2026-04-19)
+
+
+### Bug Fixes
+
+* Bump deps. Rename module ([1205405](https://github.com/mcavallo/foundry-vtt-wfrp4e-combat-companion/commit/1205405a1fff24384731809056c586e28b8e36f6))
+
 ## [0.1.0](https://github.com/mcavallo/foundry-vtt-wfrp4e-combat-companion/compare/v0.0.3...v0.1.0) (2026-04-18)
 
 
