@@ -207,3 +207,8 @@ wfrp4e-ccm-advantage-widget[variant='sheet'] {
     }
   }
 }
+
+#combat .token-initiative span {
+  line-height: 1;
+  margin-top: 3px;
+}
