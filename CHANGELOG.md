@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/mcavallo/foundry-vtt-wfrp4e-combat-companion/compare/v0.1.1...v0.1.2) (2026-04-19)
+
+
+### Bug Fixes
+
+* Tweak initiative display ([e2a4d24](https://github.com/mcavallo/foundry-vtt-wfrp4e-combat-companion/commit/e2a4d24576e51283f0455baa238240f2ff662070))
+
 ## [0.1.1](https://github.com/mcavallo/foundry-vtt-wfrp4e-combat-companion/compare/v0.1.0...v0.1.1) (2026-04-19)
 
 
