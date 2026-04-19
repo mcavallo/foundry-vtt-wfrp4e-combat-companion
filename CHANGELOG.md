@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/mcavallo/foundry-vtt-wfrp4e-combat-companion/compare/v0.1.2...v0.1.3) (2026-04-19)
+
+
+### Bug Fixes
+
+* Build output format ([60d04da](https://github.com/mcavallo/foundry-vtt-wfrp4e-combat-companion/commit/60d04daa0996920341e1fed9ce6c71ad130b1369))
+
 ## [0.1.2](https://github.com/mcavallo/foundry-vtt-wfrp4e-combat-companion/compare/v0.1.1...v0.1.2) (2026-04-19)
 
 
