@@ -22,14 +22,14 @@
     "clean": "foundry-build clean"
   },
   "devDependencies": {
-    "@mcavallo/foundry-build": "^1.0.7",
-    "@mcavallo/foundry-manifest": "^1.2.1",
-    "@mcavallo/foundry-symlink": "^1.1.4",
+    "@mcavallo/foundry-build": "^1.2.1",
+    "@mcavallo/foundry-manifest": "^1.3.0",
+    "@mcavallo/foundry-symlink": "^1.3.1",
     "@types/bun": "^1.3.11",
-    "@typescript/native-preview": "7.0.0-dev.20260327.2",
+    "@typescript/native-preview": "7.0.0-dev.20260419.1",
     "fvtt-types": "github:League-of-Foundry-Developers/foundry-vtt-types#main",
-    "oxfmt": "^0.42.0",
-    "oxlint": "^1.57.0",
-    "vitest": "^4.1.2"
+    "oxfmt": "^0.45.0",
+    "oxlint": "^1.60.0",
+    "vitest": "^4.1.4"
   }
 }

@@ -40,7 +40,7 @@ format-check *args:
 
 # Symlink dist/ into the local Foundry modules dir.
 foundry-link:
-    bunx foundry-symlink link
+    bunx foundry-symlink link --source dist
 
 # Remove the Foundry modules symlink.
 foundry-unlink:
